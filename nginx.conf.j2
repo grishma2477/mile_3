@@ -1,0 +1,12 @@
+events {}
+
+http {
+    server {
+        listen {{ server_port }};
+        server_name {{ server_name }};
+
+        location / {
+            proxy_pass http://{{ server_ip }};
+        }
+    }
+}
