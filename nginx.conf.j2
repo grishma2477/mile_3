@@ -2,8 +2,11 @@ events {}
 
 http {
     server {
-        listen {{ server_port }};
-        server_name {{ server_name }};
+        listen 443 ssl;
+        server_name {{ domain_name }};
+
+        ssl_certificate /etc/letsencrypt/live/{{ domain_name }}/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/{{ domain_name }}/privkey.pem;
 
         location / {
             proxy_pass http://{{ server_ip }};
