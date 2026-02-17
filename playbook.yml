@@ -4,7 +4,7 @@
   become: true
  
   vars:
-    image_name: grishma2477/myapp
+    image_name: grishma2477/mymilestone3
     image_tag: latest
     dockerhub_username: grishma2477
     
@@ -32,11 +32,13 @@
     - name: Push Docker image
       command: docker push {{ image_name }}:{{ image_tag }}
 
+# ----------------------------------------------------------------
+
 - name: Pull and Run Container on Docker Server
   hosts: docker_server
   become: true 
   vars:
-    image_name: grishma2477/myapp
+    image_name: grishma2477/mymilestone3
     image_tag: latest
     container_name: myapp_container
   tasks:
@@ -67,6 +69,9 @@
         --restart always
         {{ image_name }}:{{ image_tag }}
 
+
+# ----------------------------------------------------------------
+
 - name: Install and Run Nginx using Jinja2
   hosts: nginx_server
   become: true
@@ -75,7 +80,7 @@
     server_port: 80
     domain_name: grishma.dev
     server_name: "{{ domain_name, 'www.' + domain_name }}"
-    server_ip: "{{ '3.83.236.106' }}"
+    server_ip: "{{ '20.196.73.177' }}"
     email: "grishma@gmail.com"
 
   tasks:
