@@ -1,6 +1,7 @@
 ---
 - name: Build and Push Docker Image from Localhost
   hosts: localhost
+  become: true
  
   vars:
     image_name: grishma2477/myapp
