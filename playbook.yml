@@ -8,6 +8,17 @@
     dockerhub_username: grishma2477
     
   tasks:
+    - name: Install Docker (Ubuntu/Debian)
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
 
     - name: Docker login
       shell: |
