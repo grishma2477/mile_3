@@ -76,6 +76,7 @@
     domain_name: grishma.dev
     server_name: "{{ domain_name, 'www.' + domain_name }}"
     server_ip: "{{ '3.83.236.106' }}"
+    email: "grishma@gmail.com"
 
   tasks:
     - name: Update apt cache
