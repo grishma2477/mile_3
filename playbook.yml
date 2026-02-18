@@ -80,7 +80,7 @@
     server_port: 80
     domain_name: grishma.dev
     server_name: "{{ domain_name, 'www.' + domain_name }}"
-    server_ip: "{{ '20.196.73.177' }}"
+    server_ip: "{{ '40.82.128.85' }}"
     email: "grishma@gmail.com"
 
   tasks:
